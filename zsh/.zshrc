@@ -17,3 +17,5 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # nix 
 if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then ~/.nix-profile/etc/profile.d/nix.sh; fi
+
+if [ -e .zshrc.local ]; then source .zshrc.local; fi
