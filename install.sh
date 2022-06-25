@@ -10,12 +10,10 @@ fi
 
 # install packages
 nix-env -iA \
-    nixpkgs.zsh \
-    nixpkgs.antibody \
-    nixpkgs.oh-my-zsh \
-    nixpkgs.stow \
-    nixpkgs.neovim \
-    nixpkgs.vimPlugins.packer-nvim
+  nixpkgs.zsh \
+  nixpkgs.antibody \
+  nixpkgs.stow \
+  nixpkgs.neovim
 
 stow git
 stow zsh
