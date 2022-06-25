@@ -22,12 +22,6 @@ stow zsh
 stow nvim
 stow p10k
 
-# Install GO when not already installed
-# if ! command -v go &> /dev/null
-# then
-#   sudo rm -rf /usr/local/go && tar -C /usr/local -xzf go1.18.3.linux-amd64.tar.gz
-# fi
-
 # add zsh to valid login shells
 command -v zsh | sudo tee -a /etc/shells
 

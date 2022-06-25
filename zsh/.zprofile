@@ -1,7 +1,10 @@
 # GO
-export GOPATH=~/projects/go
-export PATH=$PATH:$(go env GOPATH)/bin
-export GOROOT=/usr/local/go
+if command -v go &> /dev/null
+then 
+  export GOPATH=~/projects/go
+  export PATH=$PATH:$(go env GOPATH)/bin
+  export GOROOT=/usr/local/go
+fi
 
 # Neovim
 alias vim='nvim'
