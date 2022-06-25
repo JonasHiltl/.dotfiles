@@ -1,10 +1,10 @@
-if grep -qi microsoft /proc/version; then
-  echo "Install Nix for WSL"
-  curl -L https://nixos.org/nix/install --no-daemon | sh
-  . ~/.nix-profile/etc/profile.d/nix.sh
- else
-  echo "Installing Nix for Native Linux"
-  curl -L https://nixos.org/nix/install --daemon | sh
+#!/bin/bash
+
+# Install Nix
+if [[ $OSTYPE != 'darwin'* ]]; then
+  curl -L https://nixos.org/nix/install | sh
+
+  # Source Nix
   . ~/.nix-profile/etc/profile.d/nix.sh
 fi
 
@@ -22,14 +22,17 @@ stow zsh
 stow nvim
 stow p10k
 
+# Install GO when not already installed
+# if ! command -v go &> /dev/null
+# then
+#   sudo rm -rf /usr/local/go && tar -C /usr/local -xzf go1.18.3.linux-amd64.tar.gz
+# fi
+
 # add zsh to valid login shells
-command -v zsh | login shells
+command -v zsh | sudo tee -a /etc/shells
 
 # use zsh as default stell
-sudo chsh -s $(which zsh) $USER
+chsh -s $(which zsh) $(whoami)
 
 # bundle zsh plugins
 antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
-
-# install all neovim plugins
-nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'

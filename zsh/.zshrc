@@ -15,7 +15,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# nix 
-if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then ~/.nix-profile/etc/profile.d/nix.sh; fi
-
 if [ -e .zshrc.local ]; then source .zshrc.local; fi
+
+if [ -e /home/jonas/.nix-profile/etc/profile.d/nix.sh ]; then . /home/jonas/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
