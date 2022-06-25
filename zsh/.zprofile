@@ -6,6 +6,8 @@ then
   export GOROOT=/usr/local/go
 fi
 
+alias ls='ls --color=always'
+
 # Neovim
 alias vim='nvim'
 alias v='nvim'
