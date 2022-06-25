@@ -29,3 +29,6 @@ chsh -s $(which zsh) $(whoami)
 
 # bundle zsh plugins
 antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
+
+# install node with nvm
+nvm install --lts
