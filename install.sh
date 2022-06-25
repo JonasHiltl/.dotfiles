@@ -13,7 +13,8 @@ nix-env -iA \
   nixpkgs.zsh \
   nixpkgs.antibody \
   nixpkgs.stow \
-  nixpkgs.neovim
+  nixpkgs.neovim \
+  nixpkgs.tree
 
 stow git
 stow zsh
