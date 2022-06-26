@@ -21,7 +21,7 @@ set('n', '<leader>h', '<C-W><C-H>', opts)
 -- BarBar
 set('n', '<leader>z', '<Cmd>BufferPrevious<CR>', opts)
 set('n', '<leader>o', '<Cmd>BufferNext<CR>', opts)
-set('n', '<leader>c>', '<Cmd>BufferClose<CR>', opts)
+set('n', '<leader>c', '<Cmd>BufferClose<CR>', opts)
 
 -- Telescope
 set('n', '<leader>ff', ':Telescope find_files<CR>', opts)

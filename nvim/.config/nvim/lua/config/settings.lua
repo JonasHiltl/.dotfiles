@@ -11,3 +11,4 @@ set.relativenumber = true
 set.numberwidth = 2
 set.smartcase = true
 set.hlsearch = true
+set.updatetime = 100

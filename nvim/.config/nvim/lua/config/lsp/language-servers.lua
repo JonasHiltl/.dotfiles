@@ -5,12 +5,12 @@ local on_attach = function(client, bufnr)
   -- setup auto-formatting
   require "lsp-format".on_attach(client)
 
-	  -- Enable completion triggered by <c-x><c-o>
+  -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
-  local bufopts = { noremap=true, silent=true, buffer=bufnr }
+  local bufopts = { noremap = true, silent = true, buffer = bufnr }
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
   vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
@@ -19,6 +19,8 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
   vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<leader>f', vim.lsp.buf.formatting, bufopts)
+
+  vim.api.nvim_command('autocmd CursorHold <buffer> lua vim.diagnostic.open_float()')
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -26,7 +28,7 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- 1. Set up nvim-lsp-installer first!
 lsp_installer.setup({
-  ensure_installed = {'html', 'gopls', 'tsserver', 'sumneko_lua'}
+  ensure_installed = { 'html', 'gopls', 'tsserver', 'sumneko_lua' }
 })
 
 -- 2. (optional) Override the default configuration to be applied to all servers.
