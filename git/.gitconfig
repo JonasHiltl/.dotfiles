@@ -8,3 +8,5 @@
 	email = jonashiltl2003@gmail.com
 [core]
 	autocrlf = input
+[credential]
+	helper = store
