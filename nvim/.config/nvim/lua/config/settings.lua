@@ -11,7 +11,3 @@ set.relativenumber = true
 set.numberwidth = 2
 set.smartcase = true
 set.hlsearch = true
-
--- Required by Bufferline
-set.termguicolors = true
-set.completeopt = 'longest,menuone'
