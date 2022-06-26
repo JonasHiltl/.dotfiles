@@ -1,6 +1,6 @@
-local lsp_installer = require("nvim-lsp-installer")
 local lspconfig = require("lspconfig")
 
+local lsp_installer = require("nvim-lsp-installer")
 local on_attach = function(client, bufnr)
   -- setup auto-formatting
   require "lsp-format".on_attach(client)
@@ -26,7 +26,7 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- 1. Set up nvim-lsp-installer first!
 lsp_installer.setup({
-  ensure_installed = {'html', 'gopls', 'tsserver'}
+  ensure_installed = {'html', 'gopls', 'tsserver', 'sumneko_lua'}
 })
 
 -- 2. (optional) Override the default configuration to be applied to all servers.
