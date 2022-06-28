@@ -6,6 +6,9 @@ vim.g.mapleader = ' '
 
 set('n', '<leader>e', ':NvimTreeToggle<CR>', opts)
 
+-- Better ESC
+set('i', 'jj', '<Esc>', opts)
+
 -- Move line up/down
 set('n', 'J', ':m .+1<CR>==', opts)
 set('n', 'K', ':m .-2<CR>==', opts)
@@ -22,6 +25,10 @@ set('n', '<leader>h', '<C-W><C-H>', opts)
 set('n', '<leader>z', '<Cmd>BufferPrevious<CR>', opts)
 set('n', '<leader>o', '<Cmd>BufferNext<CR>', opts)
 set('n', '<leader>c', '<Cmd>BufferClose<CR>', opts)
+set('n', '<leader>p', '<Cmd>BufferPin<CR>', opts)
 
 -- Telescope
 set('n', '<leader>ff', ':Telescope find_files<CR>', opts)
+
+-- Diagnostics
+set('n', '<leader>d', '<cmd>lua vim.diagnostic.open_float(0, { scope = "line", })<CR>', opts)

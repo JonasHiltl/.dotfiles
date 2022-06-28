@@ -20,7 +20,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<leader>f', vim.lsp.buf.formatting, bufopts)
 
-  vim.api.nvim_command('autocmd CursorHold <buffer> lua vim.diagnostic.open_float()')
+  -- vim.api.nvim_command('autocmd CursorHold <buffer> lua vim.diagnostic.open_float()')
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

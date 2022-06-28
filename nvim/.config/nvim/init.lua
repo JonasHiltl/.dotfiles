@@ -12,5 +12,6 @@ require('config.nvim-tree')
 require('config.notify')
 require('config.lualine')
 require('config.shade')
+require('config.barbar')
 
 require('config.settings')
