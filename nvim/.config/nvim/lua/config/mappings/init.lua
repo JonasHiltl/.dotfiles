@@ -7,7 +7,7 @@ vim.g.mapleader = ' '
 set('n', '<leader>e', ':NvimTreeToggle<CR>', opts)
 
 -- Better ESC
-set('i', 'jj', '<Esc>', opts)
+set('i', 'jk', '<Esc>', opts)
 
 -- Move line up/down
 set('n', 'J', ':m .+1<CR>==', opts)
