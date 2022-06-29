@@ -1,13 +1,15 @@
 local fn = vim.fn
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+  packer_bootstrap = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim',
+    install_path })
 
   -- Ref: https://github.com/wbthomason/packer.nvim/issues/739#issuecomment-1019280631
   vim.o.runtimepath = vim.fn.stdpath('data') .. '/site/pack/*/start/*,' .. vim.o.runtimepath
 end
 
-return require('packer').startup(function()
+return require('packer').startup({
+function(use)
   use 'wbthomason/packer.nvim'
 
   -- My plugins
@@ -35,6 +37,10 @@ return require('packer').startup(function()
   use 'williamboman/nvim-lsp-installer'
   use 'onsails/lspkind.nvim'
   use 'lukas-reineke/lsp-format.nvim'
+  use {
+    'glepnir/lspsaga.nvim',
+    branch = 'main',
+  }
 
   -- snippets
   use 'L3MON4D3/LuaSnip'
@@ -49,10 +55,16 @@ return require('packer').startup(function()
   -- Telescope
   use {
     'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = { { 'nvim-lua/plenary.nvim' } }
   }
 
   if packer_bootstrap then
     require('packer').sync()
   end
-end)
+end,
+config = {
+    git = {
+      default_url_format = "git@github.com:%s",
+    },
+  },
+})

@@ -2,7 +2,6 @@ require('config.packer')
 require('config.mappings')
 
 require('config.lsp.language-servers')
-require('config.lsp.format')
 require('config.cmp')
 require('config.treesitter')
 

@@ -1,3 +1,4 @@
+require("config.lsp.format")
 local lspconfig = require("lspconfig")
 
 local lsp_installer = require("nvim-lsp-installer")
@@ -8,19 +9,12 @@ local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-  -- Mappings.
-  -- See `:help vim.lsp.*` for documentation on any of the below functions
-  local bufopts = { noremap = true, silent = true, buffer = bufnr }
-  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-  vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-  vim.keymap.set('n', '<Tab>', vim.lsp.buf.hover, bufopts)
-  vim.keymap.set('n', '<leader>S', vim.lsp.buf.signature_help, bufopts)
-  vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
-  vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
-  vim.keymap.set('n', '<leader>f', vim.lsp.buf.formatting, bufopts)
-
-  -- vim.api.nvim_command('autocmd CursorHold <buffer> lua vim.diagnostic.open_float()')
+  if client.resolved_capabilities.document_formatting then
+    vim.api.nvim_command [[augroup Format]]
+    vim.api.nvim_command [[autocmd! * <buffer>]]
+    vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
+    vim.api.nvim_command [[augroup END]]
+  end
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -47,3 +41,4 @@ for _, server in ipairs(lsp_installer.get_installed_servers()) do
 end
 
 require("config.lsp.lua")
+require("config.lsp.saga")
