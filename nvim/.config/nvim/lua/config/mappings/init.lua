@@ -22,10 +22,9 @@ set('n', '<leader>l', '<C-W><C-L>', opts)
 set('n', '<leader>h', '<C-W><C-H>', opts)
 
 -- BarBar
-set('n', '<leader>z', '<Cmd>BufferPrevious<CR>', opts)
-set('n', '<leader>o', '<Cmd>BufferNext<CR>', opts)
-set('n', '<leader>c', '<Cmd>BufferClose<CR>', opts)
-set('n', '<leader>p', '<Cmd>BufferPin<CR>', opts)
+set('n', '<leader>z', '<Cmd>BufferLineCyclePrev<CR>', opts)
+set('n', '<leader>o', '<Cmd>BufferLineCycleNext<CR>', opts)
+set('n', '<leader>p', '<Cmd>BufferLineTogglePin<CR>', opts)
 
 -- Telescope
 set('n', '<leader>ff', ':Telescope find_files<CR>', opts)

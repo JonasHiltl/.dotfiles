@@ -9,60 +9,63 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 return require('packer').startup({
-function(use)
-  use 'wbthomason/packer.nvim'
+  function(use)
+    use 'wbthomason/packer.nvim'
 
-  -- My plugins
-  use 'kyazdani42/nvim-web-devicons'
-  use 'kyazdani42/nvim-tree.lua'
-  use 'lewis6991/gitsigns.nvim'
-  use 'nvim-lualine/lualine.nvim'
-  use 'rcarriga/nvim-notify'
-  use 'romgrk/barbar.nvim'
-  use 'sunjon/shade.nvim'
+    -- My plugins
+    use 'kyazdani42/nvim-web-devicons'
+    use 'kyazdani42/nvim-tree.lua'
+    use 'lewis6991/gitsigns.nvim'
+    use 'nvim-lualine/lualine.nvim'
+    use 'rcarriga/nvim-notify'
+    -- use 'romgrk/barbar.nvim'
+    use 'sunjon/shade.nvim'
+    use { 'akinsho/bufferline.nvim', tag = "v2.*" }
 
-  -- Colorschemes
-  use 'EdenEast/nightfox.nvim'
+    -- Colorschemes
+    use 'EdenEast/nightfox.nvim'
+    use 'sainnhe/edge'
+    use 'wojciechkepka/vim-github-dark'
 
-  -- cmp plugins
-  use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-cmdline'
-  use 'saadparwaiz1/cmp_luasnip'
+    -- cmp plugins
+    use 'hrsh7th/nvim-cmp'
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-cmdline'
+    use 'saadparwaiz1/cmp_luasnip'
 
-  -- LSP
-  use 'neovim/nvim-lspconfig'
-  use 'williamboman/nvim-lsp-installer'
-  use 'onsails/lspkind.nvim'
-  use 'lukas-reineke/lsp-format.nvim'
-  use {
-    'glepnir/lspsaga.nvim',
-    branch = 'main',
-  }
+    -- LSP
+    use 'neovim/nvim-lspconfig'
+    use 'williamboman/nvim-lsp-installer'
+    use 'onsails/lspkind.nvim'
+    use 'lukas-reineke/lsp-format.nvim'
+    use {
+      'glepnir/lspsaga.nvim',
+      branch = 'main',
+    }
 
-  -- snippets
-  use 'L3MON4D3/LuaSnip'
-  use 'rafamadriz/friendly-snippets'
+    -- snippets
+    use 'L3MON4D3/LuaSnip'
+    use 'rafamadriz/friendly-snippets'
 
-  -- Treesitter
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate',
-  }
+    -- Treesitter
+    use {
+      'nvim-treesitter/nvim-treesitter',
+      run = ':TSUpdate',
+    }
 
-  -- Telescope
-  use {
-    'nvim-telescope/telescope.nvim',
-    requires = { { 'nvim-lua/plenary.nvim' } }
-  }
+    -- Telescope
+    use {
+      'nvim-telescope/telescope.nvim',
+      requires = { { 'nvim-lua/plenary.nvim' } }
+    }
 
-  if packer_bootstrap then
-    require('packer').sync()
-  end
-end,
-config = {
+    if packer_bootstrap then
+      require('packer').sync()
+    end
+  end,
+  config = {
     git = {
       default_url_format = "git@github.com:%s",
     },

@@ -22,9 +22,8 @@ require('gitsigns').setup {
     end, { expr = true })
 
     -- Actions
-    map('n', '<leader>hp', gs.preview_hunk)
-    map('n', '<leader>hd', gs.diffthis)
-    map('n', '<leader>hD', function() gs.diffthis('~') end)
+    map('n', '<leader>pt', gs.preview_hunk)
+    map('n', '<leader>dt', gs.diffthis)
     map('n', '<leader>td', gs.toggle_deleted)
   end
 }

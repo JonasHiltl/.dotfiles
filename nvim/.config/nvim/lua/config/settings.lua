@@ -2,6 +2,7 @@ local set = vim.opt
 
 vim.notify = require("notify")
 
+set.termguicolors = true
 set.expandtab = true
 set.smarttab = true
 set.shiftwidth = 2

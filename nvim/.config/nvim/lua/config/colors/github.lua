@@ -1,1 +1,1 @@
-vim.cmd[[colorscheme ghdark]]
+vim.cmd [[colorscheme ghdark]]
