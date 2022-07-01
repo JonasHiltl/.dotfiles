@@ -21,15 +21,20 @@ return require('packer').startup({
     -- use 'romgrk/barbar.nvim'
     use 'sunjon/shade.nvim'
     use { 'akinsho/bufferline.nvim', tag = "v2.*" }
+    use 'glepnir/dashboard-nvim'
+    use 'windwp/nvim-autopairs'
 
     -- Colorschemes
     use 'EdenEast/nightfox.nvim'
     use 'sainnhe/edge'
     use 'wojciechkepka/vim-github-dark'
+    use 'tiagovla/tokyodark.nvim'
+    use 'folke/tokyonight.nvim'
 
     -- cmp plugins
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-nvim-lsp-signature-help'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-cmdline'
