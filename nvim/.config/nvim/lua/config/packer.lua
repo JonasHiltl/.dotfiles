@@ -30,6 +30,7 @@ return require('packer').startup({
     use 'wojciechkepka/vim-github-dark'
     use 'tiagovla/tokyodark.nvim'
     use 'folke/tokyonight.nvim'
+    use 'navarasu/onedark.nvim'
 
     -- cmp plugins
     use 'hrsh7th/nvim-cmp'
@@ -74,5 +75,10 @@ return require('packer').startup({
     git = {
       default_url_format = "git@github.com:%s",
     },
+    display = {
+      open_fn = function()
+        return require('packer.util').float({ border = 'single' })
+      end
+    }
   },
 })

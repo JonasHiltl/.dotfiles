@@ -6,7 +6,7 @@ require('config.lsp.config')
 require('config.cmp')
 require('config.treesitter')
 
-require('config.colors.tokyonight')
+require('config.colors.onedark')
 require('config.gitsigns')
 require('config.nvim-tree')
 require('config.notify')

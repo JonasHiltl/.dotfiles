@@ -1,7 +1,9 @@
 require("config.lsp.format")
 local lspconfig = require("lspconfig")
-
 local lsp_installer = require("nvim-lsp-installer")
+
+local set = vim.keymap.set
+
 local on_attach = function(client, bufnr)
   -- setup auto-formatting
   require "lsp-format".on_attach(client)
@@ -15,6 +17,9 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
     vim.api.nvim_command [[augroup END]]
   end
+
+  local bufopts = { noremap = true, silent = true, buffer = bufnr }
+  set('n', '<Tab>', vim.lsp.buf.hover, bufopts)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -40,5 +45,7 @@ for _, server in ipairs(lsp_installer.get_installed_servers()) do
   lspconfig[server.name].setup {}
 end
 
-require("config.lsp.lua")
+require("config.lsp.languages.lua")
+require("config.lsp.languages.go")
 require("config.lsp.saga")
+require("config.lsp.styles")

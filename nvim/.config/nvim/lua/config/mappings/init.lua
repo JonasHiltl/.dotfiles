@@ -28,27 +28,3 @@ set('n', '<leader>p', '<Cmd>BufferLineTogglePin<CR>', opts)
 
 -- Telescope
 set('n', '<leader>ff', ':Telescope find_files<CR>', opts)
-
--- Saga
-local codeaction = require("lspsaga.codeaction")
-
-set('n', '<leader>f', require("lspsaga.finder").lsp_finder, opts)
-set('n', '<leader>a', codeaction.code_action, opts)
-set('v', '<leader>a', function()
-  vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<C-U>', true, false, true))
-  codeaction.range_code_action()
-end, opts)
-set("n", '<Tab>', require("lspsaga.hover").render_hover_doc, { silent = true })
-set("n", '<leader>S', require("lspsaga.signaturehelp").signature_help, opts)
-set("n", "<leader>rn", require("lspsaga.rename").lsp_rename, opts)
-set("n", "<leader>d", require("lspsaga.diagnostic").show_line_diagnostics, opts)
-
-local action = require("lspsaga.action")
--- scroll down hover doc or scroll in definition preview
-set("n", "<C-f>", function()
-  action.smart_scroll_with_saga(1)
-end, { silent = true })
--- scroll up hover doc
-set("n", "<C-b>", function()
-  action.smart_scroll_with_saga(-1)
-end, { silent = true })

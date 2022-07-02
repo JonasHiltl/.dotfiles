@@ -11,6 +11,8 @@ local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 local lspkind = require 'lspkind'
 
+vim.opt.completeopt = "menuone,noselect"
+
 cmp.setup({
   enabled = function()
     -- disable completion in comments

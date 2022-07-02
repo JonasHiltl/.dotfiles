@@ -17,3 +17,4 @@ export EDITOR='nvim'
 # Dircolors (maocs)
 export CLICOLOR=1
 export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
+export COLORTERM=truecolor
