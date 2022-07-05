@@ -1,4 +1,5 @@
-# GO
+#!/bin/bash
+## GO
 export PATH=$PATH:/usr/local/go/bin
 if command -v go &> /dev/null
 then 
@@ -13,6 +14,10 @@ alias ls='ls --color=always'
 alias vim='nvim'
 alias v='nvim'
 export EDITOR='nvim'
+
+# Tmux
+alias ta='tmux attach || tmux new-session\; split-window -h'
+alias tn='tmux new-session\; split-window -h'
 
 # Dircolors (maocs)
 export CLICOLOR=1

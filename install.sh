@@ -11,10 +11,12 @@ fi
 # install packages
 nix-env -iA \
   nixpkgs.zsh \
-  nixpkgs.antibody \
   nixpkgs.stow \
   nixpkgs.neovim \
-  nixpkgs.tree
+  nixpkgs.tree \
+  nixpkgs.tmux
+
+[[ -e ~/.antidote ]] || git clone https://github.com/mattmc3/antidote.git ~/.antidote
 
 stow git
 stow zsh
@@ -28,7 +30,7 @@ command -v zsh | sudo tee -a /etc/shells
 chsh -s $(which zsh) $(whoami)
 
 # bundle zsh plugins
-antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
+antidote bundle <~/.zsh_plugins.txt >~/.zsh_plugins.zsh
 
 # install node with nvm
 nvm install --lts

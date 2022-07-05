@@ -8,7 +8,7 @@ fi
 export NVM_DIR=${HOME}/.nvm
 export NVM_COMPLETION=true
 
-source ~/.zsh_plugins.sh
+source ~/.zsh_plugins.zsh
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
