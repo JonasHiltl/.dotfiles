@@ -11,7 +11,7 @@ export NVM_COMPLETION=true
 # Load Antidote
 export ANTIDOTE_HOME=~/.cache/antidote
 [[ -e ~/.antidote ]] || git clone https://github.com/mattmc3/antidote.git ~/.antidote
-. ~/.antidote/antidote.zsh
+source ~/.antidote/antidote.zsh
 antidote load
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
