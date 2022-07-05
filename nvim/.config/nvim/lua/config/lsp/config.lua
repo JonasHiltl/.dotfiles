@@ -8,9 +8,6 @@ local on_attach = function(client, bufnr)
   -- setup auto-formatting
   require "lsp-format".on_attach(client)
 
-  -- Enable completion triggered by <c-x><c-o>
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-
   if client.resolved_capabilities.document_formatting then
     vim.api.nvim_command [[augroup Format]]
     vim.api.nvim_command [[autocmd! * <buffer>]]
@@ -18,8 +15,32 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_command [[augroup END]]
   end
 
+  -- Enable completion triggered by <c-x><c-o>
+  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+  -- Show diagnostic on hover
+  vim.api.nvim_create_autocmd("CursorHold", {
+    buffer = bufnr,
+    callback = function()
+      local opts = {
+        focusable = false,
+        close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+        source = 'always',
+        prefix = ' ',
+        scope = 'cursor',
+      }
+      vim.diagnostic.open_float(nil, opts)
+    end
+  })
+
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
   set('n', '<Tab>', vim.lsp.buf.hover, bufopts)
+  set('n', '<leader>a', vim.lsp.buf.code_action, bufopts)
+  set('n', '<leader>d', vim.lsp.buf.definition, bufopts)
+  set('n', '<leader>r', vim.lsp.buf.references, bufopts)
+  set('n', '<C-e>', vim.lsp.diagnostic.get_next, bufopts)
+  set('n', 'gE', vim.lsp.diagnostic.get_prev, bufopts)
+  set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -47,5 +68,4 @@ end
 
 require("config.lsp.languages.lua")
 require("config.lsp.languages.go")
-require("config.lsp.saga")
 require("config.lsp.styles")

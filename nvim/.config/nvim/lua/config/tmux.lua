@@ -1,0 +1,2 @@
+require('Navigator').setup()
+

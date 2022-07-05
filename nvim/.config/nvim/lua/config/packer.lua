@@ -46,10 +46,6 @@ return require('packer').startup({
     use 'williamboman/nvim-lsp-installer'
     use 'onsails/lspkind.nvim'
     use 'lukas-reineke/lsp-format.nvim'
-    use {
-      'glepnir/lspsaga.nvim',
-      branch = 'main',
-    }
 
     -- snippets
     use 'L3MON4D3/LuaSnip'
@@ -66,6 +62,9 @@ return require('packer').startup({
       'nvim-telescope/telescope.nvim',
       requires = { { 'nvim-lua/plenary.nvim' } }
     }
+
+    -- Tmux
+    use 'numToStr/Navigator.nvim'
 
     if packer_bootstrap then
       require('packer').sync()

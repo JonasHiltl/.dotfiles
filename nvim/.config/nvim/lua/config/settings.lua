@@ -14,4 +14,6 @@ set.smartcase      = true
 set.hlsearch       = true
 set.updatetime     = 100
 set.clipboard      = "unnamedplus";
-set.mouse          = "a"
+set.mouse          = "a";
+set.undodir        = vim.fn.stdpath "cache" .. "/undo"
+set.undofile       = true
