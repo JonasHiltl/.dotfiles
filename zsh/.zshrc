@@ -8,7 +8,11 @@ fi
 export NVM_DIR=${HOME}/.nvm
 export NVM_COMPLETION=true
 
-source ~/.zsh_plugins.zsh
+# Load Antidote
+export ANTIDOTE_HOME=~/.cache/antidote
+[[ -e ~/.antidote ]] || git clone https://github.com/mattmc3/antidote.git ~/.antidote
+. ~/.antidote/antidote.zsh
+antidote load
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 

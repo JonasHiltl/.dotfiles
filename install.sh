@@ -16,8 +16,6 @@ nix-env -iA \
   nixpkgs.tree \
   nixpkgs.tmux
 
-[[ -e ~/.antidote ]] || git clone https://github.com/mattmc3/antidote.git ~/.antidote
-
 stow git
 stow zsh
 stow nvim
@@ -28,9 +26,6 @@ command -v zsh | sudo tee -a /etc/shells
 
 # use zsh as default stell
 chsh -s $(which zsh) $(whoami)
-
-# bundle zsh plugins
-antidote bundle <~/.zsh_plugins.txt >~/.zsh_plugins.zsh
 
 # install node with nvm
 nvm install --lts
