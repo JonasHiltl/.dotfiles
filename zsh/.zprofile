@@ -19,6 +19,9 @@ export EDITOR='nvim'
 alias ta='tmux attach || tmux new-session\; split-window -h'
 alias tn='tmux new-session\; split-window -h'
 
+# Smug
+alias club='smug start clubo -w infra -w auth -w profile; tmux a -t clubo'
+
 # Dircolors (maocs)
 export CLICOLOR=1
 export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd

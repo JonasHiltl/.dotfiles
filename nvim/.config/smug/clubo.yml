@@ -1,0 +1,19 @@
+session: clubo
+
+root: ~/projects/go/src/github.com/clubo-app
+
+windows:
+  - name: infra 
+    root: k8s
+    layout: main-vertical 
+    panes:
+      - type: horizontal
+        root: . 
+  - name: auth
+    manual: true
+    root: auth-service 
+    layout: main-vertical
+  - name: profile
+    manual: true
+    root: profile-service 
+    layout: main-vertical

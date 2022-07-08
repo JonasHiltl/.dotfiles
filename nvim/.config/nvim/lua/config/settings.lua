@@ -17,3 +17,4 @@ set.clipboard      = "unnamedplus";
 set.mouse          = "a";
 set.undodir        = vim.fn.stdpath "cache" .. "/undo"
 set.undofile       = true
+set.swapfile       = true
