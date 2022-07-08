@@ -36,10 +36,6 @@ local on_attach = function(client, bufnr)
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
   set('n', '<Tab>', vim.lsp.buf.hover, bufopts)
   set('n', '<leader>a', vim.lsp.buf.code_action, bufopts)
-  set('n', '<leader>d', vim.lsp.buf.definition, bufopts)
-  set('n', '<leader>r', vim.lsp.buf.references, bufopts)
-  set('n', '<C-e>', vim.lsp.diagnostic.get_next, bufopts)
-  set('n', 'gE', vim.lsp.diagnostic.get_prev, bufopts)
   set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
 end
 

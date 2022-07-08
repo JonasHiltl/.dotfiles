@@ -38,4 +38,8 @@ set('n', '<leader>z', '<Cmd>BufferLineCyclePrev<CR>', opts)
 set('n', '<leader>o', '<Cmd>BufferLineCycleNext<CR>', opts)
 
 -- Telescope
-set('n', '<leader>ff', ':Telescope find_files<CR>', opts)
+local builtin = require 'telescope.builtin'
+set('n', '<leader>ff', builtin.find_files, opts)
+set('n', '<leader>fr', builtin.lsp_references, opts)
+set('n', '<leader>fd', builtin.lsp_definitions, opts)
+set('n', '<leader>fe', builtin.diagnostics, opts)
