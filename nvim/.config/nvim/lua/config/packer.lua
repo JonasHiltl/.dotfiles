@@ -18,19 +18,15 @@ return require('packer').startup({
     use 'lewis6991/gitsigns.nvim'
     use 'nvim-lualine/lualine.nvim'
     use 'rcarriga/nvim-notify'
-    -- use 'romgrk/barbar.nvim'
-    use 'sunjon/shade.nvim'
     use { 'akinsho/bufferline.nvim', tag = "v2.*" }
     use 'glepnir/dashboard-nvim'
     use 'windwp/nvim-autopairs'
+    use { 'akinsho/toggleterm.nvim', tag = 'v1.*' }
 
     -- Colorschemes
-    use 'EdenEast/nightfox.nvim'
-    use 'sainnhe/edge'
     use 'wojciechkepka/vim-github-dark'
-    use 'tiagovla/tokyodark.nvim'
-    use 'folke/tokyonight.nvim'
     use 'navarasu/onedark.nvim'
+    use 'marko-cerovac/material.nvim'
 
     -- cmp plugins
     use 'hrsh7th/nvim-cmp'
