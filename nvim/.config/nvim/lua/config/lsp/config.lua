@@ -7,6 +7,8 @@ local set = vim.keymap.set
 local on_attach = function(client, bufnr)
   -- setup auto-formatting
   require "lsp-format".on_attach(client)
+  -- Add Signatures while typing
+  require "lsp_signature".on_attach()
 
   if client.resolved_capabilities.document_formatting then
     vim.api.nvim_command [[augroup Format]]

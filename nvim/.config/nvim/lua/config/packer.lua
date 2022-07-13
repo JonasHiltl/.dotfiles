@@ -42,6 +42,7 @@ return require('packer').startup({
     use 'williamboman/nvim-lsp-installer'
     use 'onsails/lspkind.nvim'
     use 'lukas-reineke/lsp-format.nvim'
+    use 'ray-x/lsp_signature.nvim'
 
     -- snippets
     use 'L3MON4D3/LuaSnip'
