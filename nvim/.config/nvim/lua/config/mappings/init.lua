@@ -40,6 +40,7 @@ set('n', '<leader>o', '<Cmd>BufferLineCycleNext<CR>', opts)
 -- Telescope
 local builtin = require 'telescope.builtin'
 set('n', '<leader>ff', builtin.find_files, opts)
+set('n', '<leader>fg', builtin.live_grep, opts)
 set('n', '<leader>fr', builtin.lsp_references, opts)
 set('n', '<leader>fd', builtin.lsp_definitions, opts)
 set('n', '<leader>fi', builtin.lsp_implementations, opts)

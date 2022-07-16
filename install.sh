@@ -14,7 +14,8 @@ nix-env -iA \
   nixpkgs.stow \
   nixpkgs.neovim \
   nixpkgs.tree \
-  nixpkgs.tmux
+  nixpkgs.tmux \
+  nixpkgs.ripgrep
 
 stow git
 stow zsh
