@@ -7,7 +7,8 @@
 	name = Jonas Hiltl
 	email = jonashiltl2003@gmail.com
 [core]
-	autocrlf = input
+  autocrlf = input
+  eol = lf
 [credential]
 	helper = store
 [url "ssh://git@github.com/"]
